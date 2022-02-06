@@ -27,6 +27,7 @@
 		B8F9623627B0486300784D7B /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623527B0486300784D7B /* TaskListViewController.swift */; };
 		B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */; };
 		B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */; };
+		B8F9624827B050C600784D7B /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9624727B050C600784D7B /* TaskDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		B8F9623527B0486300784D7B /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailBuilder.swift; sourceTree = "<group>"; };
 		B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailContracts.swift; sourceTree = "<group>"; };
+		B8F9624727B050C600784D7B /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */,
 				B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */,
+				B8F9624727B050C600784D7B /* TaskDetail.storyboard */,
 			);
 			path = TaskDetail;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				B8F9620227B0411A00784D7B /* LaunchScreen.storyboard in Resources */,
 				B8F9623427B0484300784D7B /* TaskList.storyboard in Resources */,
+				B8F9624827B050C600784D7B /* TaskDetail.storyboard in Resources */,
 				B8F961FF27B0411A00784D7B /* Assets.xcassets in Resources */,
 				B8F961FA27B0411A00784D7B /* Main.storyboard in Resources */,
 			);
