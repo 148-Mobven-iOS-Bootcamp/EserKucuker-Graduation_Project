@@ -29,6 +29,7 @@
 		B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */; };
 		B8F9624827B050C600784D7B /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9624727B050C600784D7B /* TaskDetail.storyboard */; };
 		B8F9624A27B051D800784D7B /* TaskDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624927B051D800784D7B /* TaskDetailTableViewController.swift */; };
+		B8F9624C27B0525300784D7B /* TaskDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624B27B0525300784D7B /* TaskDetailInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailContracts.swift; sourceTree = "<group>"; };
 		B8F9624727B050C600784D7B /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
 		B8F9624927B051D800784D7B /* TaskDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewController.swift; sourceTree = "<group>"; };
+		B8F9624B27B0525300784D7B /* TaskDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +193,10 @@
 			isa = PBXGroup;
 			children = (
 				B8F9624727B050C600784D7B /* TaskDetail.storyboard */,
+				B8F9624927B051D800784D7B /* TaskDetailTableViewController.swift */,
 				B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */,
 				B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */,
-				B8F9624927B051D800784D7B /* TaskDetailTableViewController.swift */,
+				B8F9624B27B0525300784D7B /* TaskDetailInteractor.swift */,
 			);
 			path = TaskDetail;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				B8F961F527B0411A00784D7B /* SceneDelegate.swift in Sources */,
 				B8F9623227B047F100784D7B /* TaskListRouter.swift in Sources */,
 				B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */,
+				B8F9624C27B0525300784D7B /* TaskDetailInteractor.swift in Sources */,
 				B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */,
 				B8F9622827B0466F00784D7B /* TaskListBuilder.swift in Sources */,
 				B8F9622A27B046B300784D7B /* TaskListContracts.swift in Sources */,
