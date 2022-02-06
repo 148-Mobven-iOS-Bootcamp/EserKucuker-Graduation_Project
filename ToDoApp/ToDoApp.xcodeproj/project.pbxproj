@@ -26,6 +26,7 @@
 		B8F9623427B0484300784D7B /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9623327B0484300784D7B /* TaskList.storyboard */; };
 		B8F9623627B0486300784D7B /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623527B0486300784D7B /* TaskListViewController.swift */; };
 		B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */; };
+		B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B8F9623327B0484300784D7B /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		B8F9623527B0486300784D7B /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailBuilder.swift; sourceTree = "<group>"; };
+		B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F9623927B04D7C00784D7B /* TaskDetailBuilder.swift */,
+				B8F9624527B04FA300784D7B /* TaskDetailContracts.swift */,
 			);
 			path = TaskDetail;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				B8F961F527B0411A00784D7B /* SceneDelegate.swift in Sources */,
 				B8F9623227B047F100784D7B /* TaskListRouter.swift in Sources */,
 				B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */,
+				B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */,
 				B8F9622827B0466F00784D7B /* TaskListBuilder.swift in Sources */,
 				B8F9622A27B046B300784D7B /* TaskListContracts.swift in Sources */,
 				B8F961FD27B0411A00784D7B /* ToDoApp.xcdatamodeld in Sources */,
