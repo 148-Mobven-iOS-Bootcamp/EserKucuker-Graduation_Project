@@ -17,6 +17,14 @@
 		B8F9620D27B0411B00784D7B /* ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9620C27B0411B00784D7B /* ToDoAppTests.swift */; };
 		B8F9621727B0411B00784D7B /* ToDoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9621627B0411B00784D7B /* ToDoAppUITests.swift */; };
 		B8F9621927B0411B00784D7B /* ToDoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9621827B0411B00784D7B /* ToDoAppUITestsLaunchTests.swift */; };
+		B8F9622827B0466F00784D7B /* TaskListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9622727B0466F00784D7B /* TaskListBuilder.swift */; };
+		B8F9622A27B046B300784D7B /* TaskListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9622927B046B300784D7B /* TaskListContracts.swift */; };
+		B8F9622C27B0473700784D7B /* TaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9622B27B0473700784D7B /* TaskListInteractor.swift */; };
+		B8F9622E27B0479700784D7B /* TaskListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9622D27B0479700784D7B /* TaskListPresentation.swift */; };
+		B8F9623027B047BD00784D7B /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9622F27B047BD00784D7B /* TaskListPresenter.swift */; };
+		B8F9623227B047F100784D7B /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623127B047F100784D7B /* TaskListRouter.swift */; };
+		B8F9623427B0484300784D7B /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9623327B0484300784D7B /* TaskList.storyboard */; };
+		B8F9623627B0486300784D7B /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9623527B0486300784D7B /* TaskListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		B8F9621227B0411B00784D7B /* ToDoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F9621627B0411B00784D7B /* ToDoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppUITests.swift; sourceTree = "<group>"; };
 		B8F9621827B0411B00784D7B /* ToDoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8F9622727B0466F00784D7B /* TaskListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListBuilder.swift; sourceTree = "<group>"; };
+		B8F9622927B046B300784D7B /* TaskListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListContracts.swift; sourceTree = "<group>"; };
+		B8F9622B27B0473700784D7B /* TaskListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractor.swift; sourceTree = "<group>"; };
+		B8F9622D27B0479700784D7B /* TaskListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresentation.swift; sourceTree = "<group>"; };
+		B8F9622F27B047BD00784D7B /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
+		B8F9623127B047F100784D7B /* TaskListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
+		B8F9623327B0484300784D7B /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
+		B8F9623527B0486300784D7B /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +117,10 @@
 		B8F961F127B0411A00784D7B /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
-				B8F961F227B0411A00784D7B /* AppDelegate.swift */,
-				B8F961F427B0411A00784D7B /* SceneDelegate.swift */,
+				B8F9622527B0461A00784D7B /* Screens */,
+				B8F9623727B04B9100784D7B /* Resource */,
 				B8F961F627B0411A00784D7B /* ViewController.swift */,
 				B8F961F827B0411A00784D7B /* Main.storyboard */,
-				B8F961FE27B0411A00784D7B /* Assets.xcassets */,
 				B8F9620027B0411A00784D7B /* LaunchScreen.storyboard */,
 				B8F9620327B0411A00784D7B /* Info.plist */,
 				B8F961FB27B0411A00784D7B /* ToDoApp.xcdatamodeld */,
@@ -128,6 +143,39 @@
 				B8F9621827B0411B00784D7B /* ToDoAppUITestsLaunchTests.swift */,
 			);
 			path = ToDoAppUITests;
+			sourceTree = "<group>";
+		};
+		B8F9622527B0461A00784D7B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B8F9622627B0462600784D7B /* TaskList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B8F9622627B0462600784D7B /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				B8F9623327B0484300784D7B /* TaskList.storyboard */,
+				B8F9623527B0486300784D7B /* TaskListViewController.swift */,
+				B8F9622727B0466F00784D7B /* TaskListBuilder.swift */,
+				B8F9622927B046B300784D7B /* TaskListContracts.swift */,
+				B8F9622B27B0473700784D7B /* TaskListInteractor.swift */,
+				B8F9622D27B0479700784D7B /* TaskListPresentation.swift */,
+				B8F9622F27B047BD00784D7B /* TaskListPresenter.swift */,
+				B8F9623127B047F100784D7B /* TaskListRouter.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		B8F9623727B04B9100784D7B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B8F961F227B0411A00784D7B /* AppDelegate.swift */,
+				B8F961F427B0411A00784D7B /* SceneDelegate.swift */,
+				B8F961FE27B0411A00784D7B /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F9620227B0411A00784D7B /* LaunchScreen.storyboard in Resources */,
+				B8F9623427B0484300784D7B /* TaskList.storyboard in Resources */,
 				B8F961FF27B0411A00784D7B /* Assets.xcassets in Resources */,
 				B8F961FA27B0411A00784D7B /* Main.storyboard in Resources */,
 			);
@@ -261,10 +310,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F9622E27B0479700784D7B /* TaskListPresentation.swift in Sources */,
+				B8F9623627B0486300784D7B /* TaskListViewController.swift in Sources */,
 				B8F961F727B0411A00784D7B /* ViewController.swift in Sources */,
+				B8F9623027B047BD00784D7B /* TaskListPresenter.swift in Sources */,
 				B8F961F327B0411A00784D7B /* AppDelegate.swift in Sources */,
 				B8F961F527B0411A00784D7B /* SceneDelegate.swift in Sources */,
+				B8F9623227B047F100784D7B /* TaskListRouter.swift in Sources */,
+				B8F9622827B0466F00784D7B /* TaskListBuilder.swift in Sources */,
+				B8F9622A27B046B300784D7B /* TaskListContracts.swift in Sources */,
 				B8F961FD27B0411A00784D7B /* ToDoApp.xcdatamodeld in Sources */,
+				B8F9622C27B0473700784D7B /* TaskListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +503,7 @@
 				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = TaskList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +530,7 @@
 				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = TaskList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
