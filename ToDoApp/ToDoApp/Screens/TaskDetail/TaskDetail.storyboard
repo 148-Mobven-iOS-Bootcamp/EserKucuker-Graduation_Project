@@ -150,6 +150,14 @@
                             <outlet property="delegate" destination="chf-4N-yUF" id="Tnh-oR-0k4"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="addTaskTappedButton" destination="BCP-6F-Drv" id="veT-fj-rB4"/>
+                        <outlet property="datePicker" destination="dyt-MP-chJ" id="jjP-z1-9O9"/>
+                        <outlet property="deadLineDateLabel" destination="akX-GM-am5" id="xnF-7q-Rrj"/>
+                        <outlet property="detailTextView" destination="azl-zR-6IK" id="jpP-TN-585"/>
+                        <outlet property="reminderSwitch" destination="g4p-bA-hOO" id="CVr-9W-E9D"/>
+                        <outlet property="titleTextField" destination="fyE-4Z-CgQ" id="uVB-he-Pid"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2g9-Di-AVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

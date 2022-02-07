@@ -7,24 +7,40 @@
 
 import UIKit
 
-class TaskDetailTableViewController: UITableViewController {
+class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtocol {
 
+    
+
+    
+    @IBOutlet weak var addTaskTappedButton: UIButton!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var reminderSwitch: UISwitch!
+    
+    @IBOutlet weak var deadLineDateLabel: UILabel!
+    
+    @IBOutlet weak var detailTextView: UITextView!
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    var interactor: TaskDetailInteractorProtocol?
+    var router: TaskDetailRouterProtocol?
+    var screenType: builderChoice!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    func handleOutput(_ output: TaskDetailPresenterOutput) {
+        <#code#>
+    }
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
+
 
 
 
