@@ -18,6 +18,13 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     
     // TODO: For Texting
     var date = Date.now
+    func convertToString(date: Date) -> String {
+        let date = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
     
     var interactor: TaskDetailInteractorProtocol?
     var router: TaskDetailRouterProtocol?
@@ -35,7 +42,13 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     }
     
     func handleOutput(_ output: TaskDetailPresenterOutput) {
-        <#code#>
+        switch output {
+        case .showTodoDetail(let taskDetailPresentation):
+            addTaskTappedButton.setTitle("Update", for: .normal)
+            titleTextField.text = taskDetailPresentation.title
+            detailTextView.text = taskDetailPresentation.detail
+            deadLineDateLabel.text = convertToString(date: taskDetailPresentation.deadlineDate)
+        }
     }
 
     // MARK: - Table view data source
