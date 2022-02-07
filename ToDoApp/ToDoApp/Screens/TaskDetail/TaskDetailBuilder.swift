@@ -17,7 +17,7 @@ class TaskDetailBuilder {
         let presenter = TaskDetailPresenter()
         let router = TaskDetailRouter()
         
-        viewController.interector = interactor
+        viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController

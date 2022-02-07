@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B835788027B0FC19003DAE10 /* TaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835787F27B0FC19003DAE10 /* TaskDTO.swift */; };
 		B835788227B1233E003DAE10 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835788127B1233E003DAE10 /* AppContainer.swift */; };
+		B835788427B13E73003DAE10 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835788327B13E73003DAE10 /* AppRouter.swift */; };
 		B8F961F327B0411A00784D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F961F227B0411A00784D7B /* AppDelegate.swift */; };
 		B8F961F527B0411A00784D7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F961F427B0411A00784D7B /* SceneDelegate.swift */; };
 		B8F961F727B0411A00784D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F961F627B0411A00784D7B /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		B835787F27B0FC19003DAE10 /* TaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDTO.swift; sourceTree = "<group>"; };
 		B835788127B1233E003DAE10 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		B835788327B13E73003DAE10 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		B8F961EF27B0411A00784D7B /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F961F227B0411A00784D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F961F427B0411A00784D7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,10 +199,11 @@
 		B8F9623727B04B9100784D7B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B835788127B1233E003DAE10 /* AppContainer.swift */,
+				B835788327B13E73003DAE10 /* AppRouter.swift */,
 				B8F961F227B0411A00784D7B /* AppDelegate.swift */,
 				B8F961F427B0411A00784D7B /* SceneDelegate.swift */,
 				B8F961FE27B0411A00784D7B /* Assets.xcassets */,
-				B835788127B1233E003DAE10 /* AppContainer.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				B835788027B0FC19003DAE10 /* TaskDTO.swift in Sources */,
 				B8F961F327B0411A00784D7B /* AppDelegate.swift in Sources */,
 				B8F961F527B0411A00784D7B /* SceneDelegate.swift in Sources */,
+				B835788427B13E73003DAE10 /* AppRouter.swift in Sources */,
 				B8F9623227B047F100784D7B /* TaskListRouter.swift in Sources */,
 				B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */,
 				B8F9624E27B0531300784D7B /* TaskDetailPresentation.swift in Sources */,
