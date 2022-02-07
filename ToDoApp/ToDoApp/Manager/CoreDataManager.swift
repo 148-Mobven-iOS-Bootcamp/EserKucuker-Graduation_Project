@@ -41,7 +41,21 @@ class CoreDataManager : DataManagerProtocol {
     //MARK: - Core Data Functions
     
     func updateData(todoItem: Tasks, title: String, subtitle: String, date: Date) {
-        <#code#>
+        let manageContext = persistentContainer.viewContext
+        todoItem.title = title
+        todoItem.detail = subtitle
+        todoItem.deadlineDate = date
+        todoItem.createdDate = Date()
+        
+        do {
+            if manageContext.hasChanges{
+                try manageContext.save()
+                print("Basariyla  Guncellendi.")
+            }
+        } catch  {
+            print("Basarisiz Guncelleme oldu")
+            debugPrint("Guncelleme hatasi: \(error.localizedDescription)")
+        }
     }
     
     func saveData(task: TaskDetailPresentation) {
@@ -79,7 +93,14 @@ class CoreDataManager : DataManagerProtocol {
     }
     
     func deleteData(todoItem: Tasks) {
-        <#code#>
+        let manageContext = persistentContainer.viewContext
+        manageContext.delete(todoItem)
+        do {
+            try  manageContext.save()
+            print("Basariyla Silindi.")
+        } catch  {
+            debugPrint("Silme hatasi: \(error.localizedDescription)")
+        }
     }
     
     func sortbyCreatedData() -> [Tasks] {
