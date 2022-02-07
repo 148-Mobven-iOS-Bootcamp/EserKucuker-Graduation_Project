@@ -33,6 +33,7 @@
 		B8F9624E27B0531300784D7B /* TaskDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624D27B0531300784D7B /* TaskDetailPresentation.swift */; };
 		B8F9625027B053AE00784D7B /* TaskDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9624F27B053AE00784D7B /* TaskDetailRouter.swift */; };
 		B8F9625227B0542300784D7B /* TaskDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9625127B0542300784D7B /* TaskDetailPresenter.swift */; };
+		B8F9625A27B0EE6900784D7B /* ManagerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9625927B0EE6900784D7B /* ManagerContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B8F9624D27B0531300784D7B /* TaskDetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPresentation.swift; sourceTree = "<group>"; };
 		B8F9624F27B053AE00784D7B /* TaskDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailRouter.swift; sourceTree = "<group>"; };
 		B8F9625127B0542300784D7B /* TaskDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPresenter.swift; sourceTree = "<group>"; };
+		B8F9625927B0EE6900784D7B /* ManagerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F9622527B0461A00784D7B /* Screens */,
+				B8F9625827B0EE0200784D7B /* Manager */,
 				B8F9623727B04B9100784D7B /* Resource */,
 				B8F961F627B0411A00784D7B /* ViewController.swift */,
 				B8F961F827B0411A00784D7B /* Main.storyboard */,
@@ -208,6 +211,14 @@
 				B8F9625127B0542300784D7B /* TaskDetailPresenter.swift */,
 			);
 			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		B8F9625827B0EE0200784D7B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B8F9625927B0EE6900784D7B /* ManagerContracts.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 				B8F9623A27B04D7C00784D7B /* TaskDetailBuilder.swift in Sources */,
 				B8F9624E27B0531300784D7B /* TaskDetailPresentation.swift in Sources */,
 				B8F9624C27B0525300784D7B /* TaskDetailInteractor.swift in Sources */,
+				B8F9625A27B0EE6900784D7B /* ManagerContracts.swift in Sources */,
 				B8F9624627B04FA300784D7B /* TaskDetailContracts.swift in Sources */,
 				B8F9622827B0466F00784D7B /* TaskListBuilder.swift in Sources */,
 				B8F9625227B0542300784D7B /* TaskDetailPresenter.swift in Sources */,
