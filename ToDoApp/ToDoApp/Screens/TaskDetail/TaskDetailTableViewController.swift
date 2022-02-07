@@ -90,10 +90,28 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
         }
     }
     
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        
+    }
+    
+    @IBAction func reminderSwitchChanged(_ sender: UISwitch) {
+        deadLineDateLabel.textColor = (reminderSwitch.isOn ? .black : .lightGray )
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}
     // MARK: - Table view data source
+extension TaskDetailTableViewController {
 
-
-
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath{
+        case IndexPath(row: 1 , section: 2 ):
+            return reminderSwitch.isOn ? 150 : 0
+        case IndexPath(row: 0 , section: 1 ):
+            return 107
+        default:
+            return 44
+        }
+    }
 
 }
