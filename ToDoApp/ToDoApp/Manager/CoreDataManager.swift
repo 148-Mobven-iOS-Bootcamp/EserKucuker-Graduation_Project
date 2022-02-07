@@ -45,11 +45,37 @@ class CoreDataManager : DataManagerProtocol {
     }
     
     func saveData(task: TaskDetailPresentation) {
-        <#code#>
+        let manageContext = persistentContainer.viewContext
+        let model = Tasks(context: manageContext )
+        model.title = task.title
+        model.detail = task.detail
+        model.deadlineDate = task.deadlineDate
+        model.createdDate = Date()
+        do {
+            if manageContext.hasChanges{
+                try  manageContext.save()
+                print("Basariyla kaydedildi.")
+            }
+        } catch
+        {
+            debugPrint("Kaydetme hatasi: \(error.localizedDescription)")
+        }
     }
     
     func fetchData() -> [Tasks] {
-        <#code#>
+        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
+        let manageContext = persistentContainer.viewContext
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try manageContext.fetch(request)
+            print("Basariyla CoreData Veriler alindi.")
+            return result
+            
+        } catch {
+            debugPrint("Veri Cekme hatasi: \(error.localizedDescription)")
+        }
+        return []
     }
     
     func deleteData(todoItem: Tasks) {
