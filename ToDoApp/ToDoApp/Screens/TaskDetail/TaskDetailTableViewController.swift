@@ -50,7 +50,46 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
             deadLineDateLabel.text = convertToString(date: taskDetailPresentation.deadlineDate)
         }
     }
-
+    @IBAction func addTaskButtonTapped(_ sender: UIButton) {
+        guard let title = titleTextField.text,
+              let detail = detailTextView.text else {
+                  print(" Veriler Artık Options Değil ");return }
+        if (title == "")
+        {
+            let alert = UIAlertController(title: "Alert", message: "Lütfen Başlık Giriniz", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in switch action.style{
+            case .default:
+                print("default")
+            case .cancel:
+                print("Cancel")
+            case.destructive:
+                print("destructive")
+            default:
+                break
+            }
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else { let task = TaskDetailPresentation(title: title, detail: detail, deadlineDate: date)
+            switch screenType {
+                
+            case .DetailView:
+                interactor?.update(tasks: task)
+                appContainer.ischange = true
+                router?.navigate(to: .saveAndBack)
+                
+            case .AddView:
+                interactor?.addTask(task: task)
+                appContainer.ischange = true
+                router?.navigate(to: .saveAndBack)
+                
+            case .none:
+                break
+            }
+            
+        }
+    }
+    
     // MARK: - Table view data source
 
 
