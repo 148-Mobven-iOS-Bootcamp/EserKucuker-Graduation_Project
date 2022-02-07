@@ -91,7 +91,7 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     }
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-        
+        deadLineDateLabel.text = convertToString(date: sender.date)
     }
     
     @IBAction func reminderSwitchChanged(_ sender: UISwitch) {
