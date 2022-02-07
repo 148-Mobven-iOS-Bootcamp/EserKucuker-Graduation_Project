@@ -104,11 +104,34 @@ class CoreDataManager : DataManagerProtocol {
     }
     
     func sortbyCreatedData() -> [Tasks] {
-        <#code#>
+        let manageContext = persistentContainer.viewContext
+        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
+        let sorter = NSSortDescriptor(key: "createdDate", ascending: false)
+        request.sortDescriptors = [sorter]
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try manageContext.fetch(request)
+            print("Result icinde ne var \(result)")
+            return result
+            
+        } catch {
+            debugPrint("Siralama hatasi: \(error.localizedDescription)")
+        }
+        return []
     }
     
     func searchData(with: String) -> [Tasks] {
-        <#code#>
+        let manageContext = persistentContainer.viewContext
+        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
+        request.predicate = NSPredicate(format: "title contains[c] '\(with)'")
+        
+        do {
+            let data = try manageContext.fetch(request)
+            return data
+        } catch  {
+            debugPrint("Arama hatasi: \(error.localizedDescription)")
+        }
+        return []
     }
     
 }
