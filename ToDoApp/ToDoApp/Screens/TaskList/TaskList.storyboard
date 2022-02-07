@@ -30,10 +30,10 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-JH-9sc">
-                                <rect key="frame" x="309" y="792" width="100" height="30"/>
+                                <rect key="frame" x="266" y="792" width="100" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="IFy-vF-RXn"/>
-                                    <constraint firstAttribute="width" constant="100" id="YbU-m2-SPy"/>
+                                    <constraint firstAttribute="height" constant="31" id="Bgm-Ph-GCq"/>
+                                    <constraint firstAttribute="width" constant="100" id="qeC-Jp-aeI"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Add"/>
@@ -41,19 +41,11 @@
                                     <action selector="AddTaskTappedButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cLB-9h-Rx7"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyList" translatesAutoresizingMaskIntoConstraints="NO" id="fwX-h9-bif">
-                                <rect key="frame" x="0.0" y="138" width="414" height="624"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="624" id="EaC-jY-SWc"/>
-                                    <constraint firstAttribute="height" constant="624" id="NLB-w8-epZ"/>
-                                    <constraint firstAttribute="width" constant="414" id="kDz-9L-7Bo"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-oD-qwg">
-                                <rect key="frame" x="5" y="792" width="100" height="30"/>
+                                <rect key="frame" x="48" y="792" width="100" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="auQ-n4-ipg"/>
-                                    <constraint firstAttribute="height" constant="30" id="hHM-Ts-w5d"/>
+                                    <constraint firstAttribute="width" constant="100" id="CuY-rY-jeB"/>
+                                    <constraint firstAttribute="height" constant="31" id="fMI-Sm-c8d"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -61,23 +53,27 @@
                                     <action selector="SortedListTappedButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dm3-2A-cyY"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyList" id="fwX-h9-bif">
+                                <rect key="frame" x="0.0" y="138" width="414" height="624"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fwX-h9-bif" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1fX-2f-g10"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fwX-h9-bif" secondAttribute="trailing" id="348-Hn-E9D"/>
-                            <constraint firstItem="fwX-h9-bif" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4nQ-Zs-434"/>
-                            <constraint firstItem="ARe-oD-qwg" firstAttribute="top" secondItem="qIc-Ch-j5N" secondAttribute="bottom" constant="30" id="8Ad-8f-3lh"/>
-                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C4U-rB-REK"/>
-                            <constraint firstItem="Tg8-JH-9sc" firstAttribute="top" secondItem="qIc-Ch-j5N" secondAttribute="bottom" constant="30" id="Dvp-NP-Was"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qIc-Ch-j5N" secondAttribute="bottom" constant="100" id="TP7-Jv-Dxv"/>
-                            <constraint firstItem="fwX-h9-bif" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="akg-iO-mnn"/>
-                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dnh-M2-Ejf"/>
-                            <constraint firstItem="ARe-oD-qwg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="gAv-xB-Jzr"/>
-                            <constraint firstItem="fwX-h9-bif" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="gPz-2h-MT0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tg8-JH-9sc" secondAttribute="trailing" constant="5" id="r2W-hb-HpD"/>
-                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="w8o-FG-xu0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tg8-JH-9sc" secondAttribute="trailing" constant="48" id="BcZ-NR-wRw"/>
+                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="DdX-8s-uJp"/>
+                            <constraint firstItem="fwX-h9-bif" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="Fiy-LU-6Rj"/>
+                            <constraint firstItem="fwX-h9-bif" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JDT-wg-dKu"/>
+                            <constraint firstItem="Tg8-JH-9sc" firstAttribute="top" secondItem="qIc-Ch-j5N" secondAttribute="bottom" constant="30" id="JO1-4P-Vjl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qIc-Ch-j5N" secondAttribute="bottom" constant="100" id="NFQ-es-dxN"/>
+                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QUn-9i-RZR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Tg8-JH-9sc" secondAttribute="bottom" constant="39" id="RIA-uc-lBc"/>
+                            <constraint firstItem="Tg8-JH-9sc" firstAttribute="top" secondItem="fwX-h9-bif" secondAttribute="bottom" constant="30" id="W63-io-aLz"/>
+                            <constraint firstItem="ARe-oD-qwg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="bP1-p1-vX1"/>
+                            <constraint firstItem="fwX-h9-bif" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="c4w-5q-W5Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ARe-oD-qwg" secondAttribute="bottom" constant="39" id="dfP-4w-bcn"/>
+                            <constraint firstItem="qIc-Ch-j5N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qfQ-gH-PAp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zOO-8r-BO7"/>
