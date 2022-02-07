@@ -15,7 +15,7 @@ class CoreDataManager : DataManagerProtocol {
     static let  shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "vip")
+        let container = NSPersistentContainer(name: "ToDoApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -53,7 +53,7 @@ class CoreDataManager : DataManagerProtocol {
                 print("Basariyla  Guncellendi.")
             }
         } catch  {
-            print("Basarisiz Guncelleme oldu")
+            print("Guncelleme Basarisiz oldu")
             debugPrint("Guncelleme hatasi: \(error.localizedDescription)")
         }
     }
@@ -83,7 +83,7 @@ class CoreDataManager : DataManagerProtocol {
         
         do {
             let result = try manageContext.fetch(request)
-            print("Basariyla CoreData Veriler alindi.")
+            print("CoreData Verileri Basariyla alindi.")
             return result
             
         } catch {
@@ -111,7 +111,7 @@ class CoreDataManager : DataManagerProtocol {
         request.returnsObjectsAsFaults = false
         do {
             let result = try manageContext.fetch(request)
-            print("Result icinde ne var \(result)")
+            print("Result : \(result)")
             return result
             
         } catch {
@@ -133,5 +133,25 @@ class CoreDataManager : DataManagerProtocol {
         }
         return []
     }
+    // TODO: this function will be used to insert test data
+    func addTestData(title : String , detailTitle : String , deadlineDate : Date){
+        let manageContext = persistentContainer.viewContext
+        let newData = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: manageContext)
+        newData.setValue(title, forKey: "title")
+        newData.setValue(detailTitle, forKey: "detail")
+        newData.setValue(deadlineDate, forKey: "deadlineDate")
+        newData.setValue(Date(), forKey: "createdDate")
+        
+        do {
+            try manageContext.save()
+            print("Test verisi eklendi")
+            
+        } catch {
+            debugPrint("Test veri ekleme hatasi: \(error.localizedDescription)")
+        }
+    }
     
+    deinit {
+        print("CoreDataManager deinit oldu.")
+    }
 }
