@@ -11,9 +11,9 @@ import Foundation
 struct TaskDTO {
     let title : String
     let detail : String
-    let deadlineDate: Date
+    let deadlineDate: Date?
     
-    init(title : String, detail : String, deadlineDate : Date){
+    init(title : String, detail : String, deadlineDate : Date?){
         self.title = title
         self.detail = detail
         self.deadlineDate = deadlineDate
@@ -21,7 +21,7 @@ struct TaskDTO {
     
     // TODO: Add Guard let
     init(todo : Tasks){
-        self.init(title: todo.title!, detail: todo.detail!, deadlineDate: todo.deadlineDate!)
+        self.init(title: todo.title!, detail: todo.detail!, deadlineDate: todo.deadlineDate)
     }
 }
 
@@ -29,5 +29,5 @@ struct TaskDTO {
 struct Task {
     let title : String
     let detail : String
-    let deadlineDate: Date
+    let deadlineDate: Date?
 }

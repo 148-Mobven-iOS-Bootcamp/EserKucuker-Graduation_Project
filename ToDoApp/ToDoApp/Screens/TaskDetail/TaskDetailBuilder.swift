@@ -13,7 +13,7 @@ class TaskDetailBuilder {
         let storyboard = UIStoryboard(name: "TaskDetail", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "TaskDetail") as! TaskDetailTableViewController
         viewController.screenType = screentype
-        let interactor = TaskDetailInteractor(dataManager: appContainer.dataManager)
+        let interactor = TaskDetailInteractor(dataManager: appContainer.dataManager, notificationManager: appContainer.notificationManager )
         let presenter = TaskDetailPresenter()
         let router = TaskDetailRouter()
         
