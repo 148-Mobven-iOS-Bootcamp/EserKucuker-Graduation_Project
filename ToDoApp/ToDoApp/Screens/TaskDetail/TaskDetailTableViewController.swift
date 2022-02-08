@@ -17,7 +17,6 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     @IBOutlet weak var titleTextField: UITextField!
     
     // TODO: For Texting
-    var date = Date.now
     func convertToString(date: Date) -> String {
         let date = date
         let dateFormatter = DateFormatter()
@@ -34,8 +33,8 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.viewdidload()
-        reminderSwitch.isOn = false
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
@@ -44,9 +43,10 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     func handleOutput(_ output: TaskDetailPresenterOutput) {
         switch output {
         case .showTodoDetail(let taskDetailPresentation):
-            addTaskTappedButton.setTitle("Update", for: .normal)
+            addTaskTappedButton.setTitle(TaskDetailViewController.addTaskButtonText.rawValue, for: .normal)
             titleTextField.text = taskDetailPresentation.title
             detailTextView.text = taskDetailPresentation.detail
+            
             if let endDate = taskDetailPresentation.deadlineDate{
                 deadLineDateLabel.text = convertToString(date: endDate)
             } else {
@@ -57,13 +57,39 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
         }
     }
     
-@IBAction func addTaskButtonTapped(_ sender: UIButton) {
-    guard let title = titleTextField.text,
-          let detail = detailTextView.text else {
-              print(" Veriler Artık Options Değil ");return }
-    if (title == "")
-    {
-        let alert = UIAlertController(title: "Alert", message: "Lütfen Başlık Giriniz", preferredStyle: .alert)
+    @IBAction func addTaskButtonTapped(_ sender: UIButton) {
+        guard let title = titleTextField.text,
+              let detail = detailTextView.text else {
+                  print(" Veriler Artık Options Değil ");return }
+        if (!isValidInput(Input:title))
+        {
+            setAlert(messeges: "Lütfen Başlık Giriniz")
+        }else if(reminderSwitch.isOn && deadLineDateLabel.text == ""){
+            setAlert(messeges: "Lüften Tarih seciniz")
+        }
+        else {
+            let task = TaskDetailPresentation(title: title, detail: detail, deadlineDate: reminderSwitch.isOn ? datePicker.date : nil)
+            switch screenType {
+                
+            case .DetailView:
+                interactor?.update(tasks: task)
+                appContainer.ischange = true
+                router?.navigate(to: .saveAndBack)
+                
+            case .AddView:
+                interactor?.addTask(task: task)
+                appContainer.ischange = true
+                router?.navigate(to: .saveAndBack)
+                
+            case .none:
+                break
+            }
+            
+        }
+    }
+    func setAlert(messeges: String){
+        
+        let alert = UIAlertController(title: "Uyarı", message: messeges, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in switch action.style{
         case .default:
             print("default")
@@ -77,35 +103,17 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    else { let task = TaskDetailPresentation(title: title, detail: detail, deadlineDate: date)
-        switch screenType {
-            
-        case .DetailView:
-            interactor?.update(tasks: task)
-            appContainer.ischange = true
-            router?.navigate(to: .saveAndBack)
-            
-        case .AddView:
-            interactor?.addTask(task: task)
-            appContainer.ischange = true
-            router?.navigate(to: .saveAndBack)
-            
-        case .none:
-            break
-        }
-        
+    
+    
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        deadLineDateLabel.text = convertToString(date: sender.date)
     }
-}
-
-@IBAction func datePickerChanged(_ sender: UIDatePicker) {
-    deadLineDateLabel.text = convertToString(date: sender.date)
-}
-
-@IBAction func reminderSwitchChanged(_ sender: UISwitch) {
-    deadLineDateLabel.textColor = (reminderSwitch.isOn ? .black : .lightGray )
-    tableView.beginUpdates()
-    tableView.endUpdates()
-}
+    
+    @IBAction func reminderSwitchChanged(_ sender: UISwitch) {
+        deadLineDateLabel.textColor = (reminderSwitch.isOn ? .black : .lightGray )
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
 }
 // MARK: - Table view data source
 extension TaskDetailTableViewController {
