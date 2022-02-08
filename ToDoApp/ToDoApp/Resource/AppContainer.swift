@@ -12,6 +12,7 @@ var appContainer = AppContainer()
 class AppContainer {
     var router = AppRouter()
     var dataManager = CoreDataManager()
+    var notificationManager = LocalNotificationManager()
     var ischange = false
 }
 
