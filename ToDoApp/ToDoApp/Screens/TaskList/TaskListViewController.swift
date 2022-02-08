@@ -14,6 +14,8 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
             TaskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
         }
     }
+    @IBOutlet weak var emptyList: UIImageView!
+    @IBOutlet weak var emptyTaskListLabel: UILabel!
     
     var interactor: TaskListInteractorProtocol?
     var router: TaskListRouterProtocol?
@@ -33,22 +35,27 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
         interactor?.didchangeTodo()
         self.navigationController?.isNavigationBarHidden = true
     }
-    
+   // MARK: Presenter OutPut
     func handleOutput(_ output: TaskListPresenterOutput) {
         switch output {
         case .showToDoList(let task),.showSearchToDo(let task),.showDeletedToDo(let task):
             self.tasks = task
             if(task.count == 0)
             {
-                self.TaskListTableView.isHidden = true
+                self.emptyTaskListLabel.isHidden = false
+                self.emptyList.isHidden = false
             }
             else {
+                self.emptyList.isHidden = true
                 self.TaskListTableView.isHidden = false
+                self.emptyTaskListLabel.isHidden = true
             }
         case .showSortedToDo(let task, let flag):
             self.tasks = task
             self.isSorted = flag
         case .showEmptyData:
+            self.emptyList.isHidden = false
+            self.emptyTaskListLabel.isHidden = false
             self.TaskListTableView.reloadData()
         }
         DispatchQueue.main.async {
@@ -67,7 +74,7 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
     
 }
 // MARK: UITableViewDelegate
-extension TaskListViewController: UITableViewDelegate{
+extension TaskListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         router?.navigate(to: .showTodoDetail(index: indexPath.row))
     }
@@ -76,21 +83,21 @@ extension TaskListViewController: UITableViewDelegate{
         return "Delete"
     }
     
-    func tableView(_ tableView: UITableView , committ editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        if (editingStyle == .delete){
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             interactor?.deleteData(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
         }
     }
 }
 // MARK: UITableViewDataSource
-extension TaskListViewController: UITableViewDataSource{
+extension TaskListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "identifire", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row].title
         return cell
     }
@@ -101,3 +108,4 @@ extension TaskListViewController: UISearchBarDelegate {
         interactor?.didSearchdata(with: searchText)
     }
 }
+
