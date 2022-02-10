@@ -40,10 +40,10 @@ class CoreDataManager : DataManagerProtocol {
     
     //MARK: - Core Data Functions
     
-    func updateData(todoItem: Tasks, title: String, subtitle: String, date: Date?) {
+    func updateData(todoItem: Tasks, title: String, detail: String, date: Date?) {
         let manageContext = persistentContainer.viewContext
         todoItem.title = title
-        todoItem.detail = subtitle
+        todoItem.detail = detail
         todoItem.deadlineDate = date
         todoItem.createdDate = Date()
         

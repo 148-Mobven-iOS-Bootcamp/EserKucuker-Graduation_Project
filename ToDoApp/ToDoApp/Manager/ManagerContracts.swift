@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DataManagerProtocol {
-    func updateData(todoItem : Tasks, title : String, subtitle : String, date : Date?)
+    func updateData(todoItem : Tasks, title : String, detail : String, date : Date?)
     func saveData( task: TaskDetailPresentation)
     func fetchData() -> [Tasks]
     func deleteData(todoItem : Tasks)
