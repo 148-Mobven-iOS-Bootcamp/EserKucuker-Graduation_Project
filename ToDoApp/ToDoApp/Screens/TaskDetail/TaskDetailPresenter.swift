@@ -16,7 +16,8 @@ class TaskDetailPresenter: TaskDetailPresenterProtocol {
         switch output {
         case .showTask(let taskDTO):
             viewController?.handleOutput(.showTodoDetail(TaskDetailPresentation(todo: taskDTO)))
-            
+        case .addTask:
+            viewController?.handleOutput(.addTodo)
         }
     }
 }
