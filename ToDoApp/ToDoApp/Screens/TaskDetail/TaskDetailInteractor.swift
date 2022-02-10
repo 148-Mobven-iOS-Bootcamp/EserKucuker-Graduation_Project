@@ -21,8 +21,12 @@ class TaskDetailInteractor: TaskDetailInteractorProtocol, TaskDetailDataStorePro
     }
 
     func viewdidload() {
-        guard let tasks = task else { return }
-        self.presenter?.handleOutput(.showTask(tasks))
+        if let tasks = task {
+            self.presenter?.handleOutput(.showTask(tasks))
+        }
+        else{
+            self.presenter?.handleOutput(.addTask)
+        }
     }
     
     func addTask(task:TaskDetailPresentation) {
@@ -36,7 +40,7 @@ class TaskDetailInteractor: TaskDetailInteractorProtocol, TaskDetailDataStorePro
     func update(tasks: TaskDetailPresentation){
         guard let todo = task else { return }
         notificationManager.deleteOldNotificationForUpdate(title: tasks.title)
-        dataManager.updateData(todoItem: todo, title: tasks.title, subtitle: tasks.detail, date: tasks.deadlineDate)
+        dataManager.updateData(todoItem: todo, title: tasks.title, detail: tasks.detail, date: tasks.deadlineDate)
         
         if(tasks.deadlineDate != nil){
             addNotification(task:tasks)
