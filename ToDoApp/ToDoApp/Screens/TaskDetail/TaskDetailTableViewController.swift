@@ -32,6 +32,8 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupHideKeyboardWhenTapOutside()
         interactor?.viewdidload()
     }
     
@@ -46,12 +48,16 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
             addTaskTappedButton.setTitle(TaskDetailViewController.addTaskButtonText.rawValue, for: .normal)
             titleTextField.text = taskDetailPresentation.title
             detailTextView.text = taskDetailPresentation.detail
+            reminderSwitch.isOn = deadLineDateLabel.text != ""
             
             if let endDate = taskDetailPresentation.deadlineDate{
                 deadLineDateLabel.text = convertToString(date: endDate)
             } else {
                 deadLineDateLabel.text = ""
+                
             }
+
+        case .addTodo:
             //TODO: buraya bakılıcak
             reminderSwitch.isOn = deadLineDateLabel.text != ""
         }
@@ -129,4 +135,9 @@ extension TaskDetailTableViewController {
         }
     }
     
+}
+extension TaskDetailTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
