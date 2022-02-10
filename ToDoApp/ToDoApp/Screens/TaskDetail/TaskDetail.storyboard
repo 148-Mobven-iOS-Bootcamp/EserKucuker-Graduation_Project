@@ -82,7 +82,7 @@
                                                         <action selector="reminderSwitchChanged:" destination="chf-4N-yUF" eventType="valueChanged" id="577-6A-Vj5"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/12 12:12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akX-GM-am5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akX-GM-am5">
                                                     <rect key="frame" x="231" y="11" width="118" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="CUe-Ot-myC"/>
