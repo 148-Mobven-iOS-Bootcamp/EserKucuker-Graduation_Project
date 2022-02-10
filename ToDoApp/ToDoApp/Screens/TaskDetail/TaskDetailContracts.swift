@@ -29,6 +29,7 @@ protocol TaskDetailInteractorProtocol {
 
 enum TaskDetailInteractorOutput {
     case showTask(Tasks)
+    case addTask
 }
 
 // MARK: PRESENTER
@@ -39,7 +40,7 @@ protocol TaskDetailPresenterProtocol {
 
 enum TaskDetailPresenterOutput {
     case showTodoDetail(TaskDetailPresentation)
-
+    case addTodo
 }
 
 // MARK: ROUTER
