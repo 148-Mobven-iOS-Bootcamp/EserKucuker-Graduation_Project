@@ -10,8 +10,8 @@ import UIKit
 
 class TaskDetailBuilder {
     static func build(screentype: builderChoice) -> TaskDetailTableViewController{
-        let storyboard = UIStoryboard(name: "TaskDetail", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "TaskDetail") as! TaskDetailTableViewController
+        let storyboard = UIStoryboard(name: TaskDetailBuilderString.name.rawValue, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: TaskDetailBuilderString.name.rawValue) as! TaskDetailTableViewController
         viewController.screenType = screentype
         let interactor = TaskDetailInteractor(dataManager: appContainer.dataManager, notificationManager: appContainer.notificationManager )
         let presenter = TaskDetailPresenter()
