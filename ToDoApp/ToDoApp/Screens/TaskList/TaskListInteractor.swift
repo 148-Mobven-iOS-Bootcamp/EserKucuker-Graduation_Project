@@ -46,25 +46,25 @@ class TaskListInteractor : TaskListInteractorProtocol , TaskListDataStoreProtoco
     }
     
     func didSortedData(by isSorted: Bool) {
-        //tasks = isSorted ? dataManager.fetchData() : dataManager.sortbyCreatedData()
+        tasks = isSorted ? dataManager.fetchData() : dataManager.sortbyCreatedData()
         
-        let newTask:[Tasks]
-        // TODO: Refactor
-        if (isSorted)
-        {
-            newTask = tasks.sorted{ guard let deadlineDate0 = $0.deadlineDate, let deadlineDate1 = $1.deadlineDate
-                else { return false }
-                return deadlineDate0 < deadlineDate1 }
-        }
-        else {
-            newTask = tasks.sorted { guard let deadlineDate0 = $0.deadlineDate, let deadlineDate1 = $1.deadlineDate
-                else { return false }
-                return deadlineDate0 > deadlineDate1 }
-        }
+//        let newTask:[Tasks]
+//        // TODO: Refactor
+//        if (isSorted)
+//        {
+//            newTask = tasks.sorted{ guard let deadlineDate0 = $0.deadlineDate, let deadlineDate1 = $1.deadlineDate
+//                else { return false }
+//                return deadlineDate0 < deadlineDate1 }
+//        }
+//        else {
+//            newTask = tasks.sorted { guard let deadlineDate0 = $0.deadlineDate, let deadlineDate1 = $1.deadlineDate
+//                else { return false }
+//                return deadlineDate0 > deadlineDate1 }
+//        }
         
         
-        if newTask.count > 0{
-            self.presenter?.handeOutput(.sortData(newTask, !isSorted))
+        if tasks.count > 0{
+            self.presenter?.handeOutput(.sortData(tasks, !isSorted))
         }
         else {
             self.presenter?.handeOutput(.showEmptyData)
