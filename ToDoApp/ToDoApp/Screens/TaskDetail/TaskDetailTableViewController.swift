@@ -67,7 +67,7 @@ class TaskDetailTableViewController: UITableViewController, TaskDetailViewProtoc
         guard let title = titleTextField.text,
               let detail = detailTextView.text else {
                   print(" Veriler Artık Options Değil ");return }
-        if (!isValidInput(Input:title))
+        if (title.count<=0 || title == " " )
         {
             setAlert(messeges: "Lütfen Başlık Giriniz")
         }else if(reminderSwitch.isOn && deadLineDateLabel.text == ""){
