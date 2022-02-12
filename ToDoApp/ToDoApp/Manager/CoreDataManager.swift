@@ -133,23 +133,6 @@ class CoreDataManager : DataManagerProtocol {
         }
         return []
     }
-    // TODO: this function will be used to insert test data
-    func addTestData(title : String , detailTitle : String , deadlineDate : Date){
-        let manageContext = persistentContainer.viewContext
-        let newData = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: manageContext)
-        newData.setValue(title, forKey: "title")
-        newData.setValue(detailTitle, forKey: "detail")
-        newData.setValue(deadlineDate, forKey: "deadlineDate")
-        newData.setValue(Date(), forKey: "createdDate")
-        
-        do {
-            try manageContext.save()
-            print("Test verisi eklendi")
-            
-        } catch {
-            debugPrint("Test veri ekleme hatasi: \(error.localizedDescription)")
-        }
-    }
     
     deinit {
         print("CoreDataManager deinit oldu.")
