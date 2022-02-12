@@ -25,7 +25,7 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupHideKeyboardWhenTapOutside()
         interactor?.viewDidLoad()
     }
     
@@ -53,6 +53,7 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
         case .showSortedToDo(let task, let flag):
             self.tasks = task
             self.isSorted = flag
+            self.TaskListTableView.reloadData()
         case .showEmptyData:
             self.emptyList.isHidden = false
             self.emptyTaskListLabel.isHidden = false
@@ -77,6 +78,8 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
 extension TaskListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         router?.navigate(to: .showTodoDetail(index: indexPath.row))
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
