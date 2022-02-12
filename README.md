@@ -50,12 +50,12 @@ Iphone Screenshots  And Videos
 | ----------- | ------------ |
 | ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/Add.gif) | ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/Update.gif) |
 
-| Sort by Create Date | Search To-Do | 
+| Sort by Create Date | Search ToDo | 
 | ------------------- | ------------ | 
 | ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/sorted.gif)  | ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/Search.gif) | 
 
 | Notification When App Close | Delete |
-| ------------ | 
+| ------------ |  ----------- | 
  ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/Notification.gif) | ![image](https://github.com/148-Mobven-iOS-Bootcamp/EserKucuker-Graduation_Project/blob/Readme/Readme/Delete.gif) | 
 
 | Error | 
