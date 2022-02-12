@@ -15,7 +15,7 @@ class CoreDataManager : DataManagerProtocol {
     static let  shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ToDoApp")
+        let container = NSPersistentContainer(name: CoreData.name.rawValue)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -77,7 +77,7 @@ class CoreDataManager : DataManagerProtocol {
     }
     
     func fetchData() -> [Tasks] {
-        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
+        let request = NSFetchRequest<Tasks>(entityName: CoreData.entityName.rawValue)
         let manageContext = persistentContainer.viewContext
         request.returnsObjectsAsFaults = false
         
@@ -105,8 +105,8 @@ class CoreDataManager : DataManagerProtocol {
     
     func sortbyCreatedData() -> [Tasks] {
         let manageContext = persistentContainer.viewContext
-        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
-        let sorter = NSSortDescriptor(key: "createdDate", ascending: false)
+        let request = NSFetchRequest<Tasks>(entityName: CoreData.entityName.rawValue)
+        let sorter = NSSortDescriptor(key: CoreData.key.rawValue, ascending: false)
         request.sortDescriptors = [sorter]
         request.returnsObjectsAsFaults = false
         do {
@@ -122,7 +122,7 @@ class CoreDataManager : DataManagerProtocol {
     
     func searchData(with: String) -> [Tasks] {
         let manageContext = persistentContainer.viewContext
-        let request = NSFetchRequest<Tasks>(entityName: "Tasks")
+        let request = NSFetchRequest<Tasks>(entityName: CoreData.entityName.rawValue)
         request.predicate = NSPredicate(format: "title contains[c] '\(with)'")
         
         do {
@@ -132,23 +132,6 @@ class CoreDataManager : DataManagerProtocol {
             debugPrint("Arama hatasi: \(error.localizedDescription)")
         }
         return []
-    }
-    // TODO: this function will be used to insert test data
-    func addTestData(title : String , detailTitle : String , deadlineDate : Date){
-        let manageContext = persistentContainer.viewContext
-        let newData = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: manageContext)
-        newData.setValue(title, forKey: "title")
-        newData.setValue(detailTitle, forKey: "detail")
-        newData.setValue(deadlineDate, forKey: "deadlineDate")
-        newData.setValue(Date(), forKey: "createdDate")
-        
-        do {
-            try manageContext.save()
-            print("Test verisi eklendi")
-            
-        } catch {
-            debugPrint("Test veri ekleme hatasi: \(error.localizedDescription)")
-        }
     }
     
     deinit {

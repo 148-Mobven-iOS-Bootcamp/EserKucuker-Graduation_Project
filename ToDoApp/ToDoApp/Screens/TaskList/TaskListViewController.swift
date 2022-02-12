@@ -11,7 +11,7 @@ class TaskListViewController: UIViewController, TaskListViewProtocol {
     
     @IBOutlet weak var TaskListTableView: UITableView!{
         didSet{
-            TaskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
+            TaskListTableView.register(UITableViewCell.self, forCellReuseIdentifier: TaskListVC.identifier.rawValue)
         }
     }
     @IBOutlet weak var emptyList: UIImageView!
